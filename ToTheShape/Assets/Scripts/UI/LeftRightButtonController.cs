@@ -9,29 +9,37 @@ namespace Alican
     {
         [SerializeField] private GameObject rightButton;
         [SerializeField] private GameObject leftButton;
+        private ButtonState buttonState = ButtonState.Mid;
 
         private void OnEnable()
         {
             ActivateAndCloseButtonAction.activateButtonPointObserver += ActivateButtons;
             ActivateAndCloseButtonAction.closeButtonPointObserver += CloseButtons;
+            ActivateAndCloseButtonAction.destroyTilePointObserver += ResetButtonState;
         }
 
         private void OnDestroy()
         {
             ActivateAndCloseButtonAction.activateButtonPointObserver -= ActivateButtons;
             ActivateAndCloseButtonAction.closeButtonPointObserver -= CloseButtons;
+            ActivateAndCloseButtonAction.destroyTilePointObserver -= ResetButtonState;
+
         }
 
         public void LeftButton()
         {
-            Debug.Log("Left Click");
+            buttonState = ButtonState.Left;
         }
 
         public void RightButton()
         {
-            Debug.Log("Right Click");
+            buttonState = ButtonState.Right;
         }
 
+        private void ResetButtonState()
+        {
+            buttonState = ButtonState.Mid;
+        }
 
         private void ActivateButtons()
         {
@@ -45,5 +53,12 @@ namespace Alican
             leftButton.SetActive(false);
         }
         
+    }
+
+    public enum ButtonState
+    {
+        Left,
+        Right,
+        Mid
     }
 }
