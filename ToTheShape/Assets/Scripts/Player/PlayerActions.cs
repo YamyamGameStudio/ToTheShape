@@ -2,8 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ActivateAndCloseButtonAction : MonoBehaviour
+public class PlayerActions : MonoBehaviour
 {
+    public static event Action tileFirstPointObserver;
     public static event Action activateButtonPointObserver;
     public static event Action closeButtonPointObserver;
     public static event Action destroyTilePointObserver;
@@ -14,16 +15,19 @@ public class ActivateAndCloseButtonAction : MonoBehaviour
            //observer bağır
            activateButtonPointObserver?.Invoke();
         }
-
-        if (other.CompareTag("CloseButton"))
+        else if (other.CompareTag("CloseButton"))
         {
             //observer bağır
             closeButtonPointObserver?.Invoke();
         }
-
-        if (other.CompareTag("DestroyTilePoint"))
+        else if (other.CompareTag("DestroyTilePoint"))
         {
             destroyTilePointObserver?.Invoke();
         }
+        else if (other.CompareTag("TileFirstPoint"))
+        {
+            tileFirstPointObserver?.Invoke();
+        }
+        
     }
 }

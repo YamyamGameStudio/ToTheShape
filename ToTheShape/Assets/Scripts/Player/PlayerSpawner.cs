@@ -51,7 +51,7 @@ public enum PlayerTypes
     Cone,
     Cube,
     Cylinder,
-    Elipse,
+    Ellipse,
     Hexagon,
     Sphere
 }

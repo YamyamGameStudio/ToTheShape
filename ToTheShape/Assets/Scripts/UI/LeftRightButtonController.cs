@@ -15,16 +15,16 @@ namespace Alican
 
         private void OnEnable()
         {
-            ActivateAndCloseButtonAction.activateButtonPointObserver += ActivateButtons;
-            ActivateAndCloseButtonAction.closeButtonPointObserver += CloseButtons;
-            ActivateAndCloseButtonAction.destroyTilePointObserver += ResetButtonState;
+            PlayerActions.activateButtonPointObserver += ActivateButtons;
+            PlayerActions.closeButtonPointObserver += CloseButtons;
+            PlayerActions.destroyTilePointObserver += ResetButtonState;
         }
 
         private void OnDestroy()
         {
-            ActivateAndCloseButtonAction.activateButtonPointObserver -= ActivateButtons;
-            ActivateAndCloseButtonAction.closeButtonPointObserver -= CloseButtons;
-            ActivateAndCloseButtonAction.destroyTilePointObserver -= ResetButtonState;
+            PlayerActions.activateButtonPointObserver -= ActivateButtons;
+            PlayerActions.closeButtonPointObserver -= CloseButtons;
+            PlayerActions.destroyTilePointObserver -= ResetButtonState;
 
         }
 

@@ -7,6 +7,7 @@ TagManager:
   - ActivateButton
   - CloseButton
   - DestroyTilePoint
+  - TileFirstPoint
   layers:
   - Default
   - TransparentFX
