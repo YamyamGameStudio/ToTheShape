@@ -30,6 +30,7 @@ public class PlayerSpawner : MonoBehaviour
         var randomPlayerIndex=Random.Range(0,playerDictionary.Count);
         meshFilter.sharedMesh = playerList[randomPlayerIndex].playerMeshFilter.sharedMesh;
         playerType = playerList[randomPlayerIndex].playerType;
+        gameObject.name = playerType.ToString();
     }
 }
 

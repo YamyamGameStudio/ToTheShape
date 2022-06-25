@@ -18,6 +18,7 @@ public class GateController : MonoBehaviour
     private MeshFilter leftGateMeshFilter => leftGateTransform.gameObject.GetComponent<MeshFilter>();
 
     private bool isPlayerTypeGateSpawned;
+    private GateTypes firstGateType, secondGateType;
 
     private void OnEnable()
     {
@@ -45,8 +46,8 @@ public class GateController : MonoBehaviour
         //gateleri spawn edeceğimiz yer.
         MeshFilter firstChoosenMeshFilter;
         MeshFilter secondChoosenMeshFilter;
-        GateTypes firstGateType;
-        GateTypes secondGateType;
+        /*GateTypes firstGateType;
+        GateTypes secondGateType;*/
         var randomSide = Random.value;
         if (randomSide<0.5f)
         {
@@ -65,6 +66,7 @@ public class GateController : MonoBehaviour
         var randomFirstGateIndex=Random.Range(0,gateDictionary.Count);
         firstChoosenMeshFilter.sharedMesh = gateList[randomFirstGateIndex].gateMeshFilter.sharedMesh;
         firstGateType = gateList[randomFirstGateIndex].gateType;
+        
 
         if (firstGateType.ToString() == playerType.ToString())
         {
@@ -96,6 +98,9 @@ public class GateController : MonoBehaviour
             }
             
         }
+
+        firstChoosenMeshFilter.gameObject.GetComponent<GateBase>().gateType = firstGateType;
+        secondChoosenMeshFilter.gameObject.GetComponent<GateBase>().gateType = secondGateType;
 
     }
 }
