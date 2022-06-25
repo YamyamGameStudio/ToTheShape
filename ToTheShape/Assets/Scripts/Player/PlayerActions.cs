@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PlayerActions : MonoBehaviour
 {
-    public static event Action tileFirstPointObserver;
+    public static event Action <PlayerTypes>tileFirstPointObserver;
     public static event Action activateButtonPointObserver;
     public static event Action closeButtonPointObserver;
     public static event Action destroyTilePointObserver;
@@ -26,7 +26,7 @@ public class PlayerActions : MonoBehaviour
         }
         else if (other.CompareTag("TileFirstPoint"))
         {
-            tileFirstPointObserver?.Invoke();
+            tileFirstPointObserver?.Invoke(transform.GetComponent<PlayerSpawner>().playerType);
         }
         
     }

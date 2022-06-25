@@ -11,7 +11,7 @@ public class PlayerSpawner : MonoBehaviour
 
     private Dictionary<PlayerTypes, MeshFilter> playerDictionary;
 
-    private PlayerTypes playerType;
+    public PlayerTypes playerType;
     private MeshFilter meshFilter => gameObject.GetComponent<MeshFilter>();
     // Start is called before the first frame update
     void Start()

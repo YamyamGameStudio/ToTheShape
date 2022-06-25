@@ -478,7 +478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56782381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: -5.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -560,6 +560,7 @@ MonoBehaviour:
     playerMeshFilter: {fileID: -5754084199372789682, guid: 4015c683954fe46cfa73c2a073f776ca, type: 3}
   - playerType: 5
     playerMeshFilter: {fileID: -5754084199372789682, guid: 2667b217a30264ae1b6abe2b957b0175, type: 3}
+  playerType: 0
 --- !u!1 &164728300
 GameObject:
   m_ObjectHideFlags: 0
