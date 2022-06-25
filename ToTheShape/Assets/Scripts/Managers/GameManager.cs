@@ -17,6 +17,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void Start()
     {
+        Time.timeScale = 1f;
         UIManager.Instance.ChangeScoreText(score);
         UIManager.Instance.ChangeHPText(hp);
     }

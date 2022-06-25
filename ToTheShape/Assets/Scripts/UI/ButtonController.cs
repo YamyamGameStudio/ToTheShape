@@ -41,7 +41,7 @@ namespace Alican
 
         public void RestartButtons()
         {
-            //scene manager ile oyun restart edilecek
+            LevelManager.Instance.LoadScene();
         }
 
         private void ResetButtonState()
