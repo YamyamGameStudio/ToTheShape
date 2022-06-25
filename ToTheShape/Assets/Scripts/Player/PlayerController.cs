@@ -12,11 +12,13 @@ namespace Alican
 
         private void OnEnable()
         {
+            GateBase.gateExitObserver += ResetSidePosition;
             LeftRightButtonController.buttonClosedObserver += SideMovement;
         }
 
         private void OnDestroy()
         {
+            GateBase.gateExitObserver -= ResetSidePosition;
             LeftRightButtonController.buttonClosedObserver -= SideMovement;
         }
 
