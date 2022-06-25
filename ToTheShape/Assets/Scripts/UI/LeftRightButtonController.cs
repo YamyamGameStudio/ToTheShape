@@ -11,6 +11,8 @@ namespace Alican
         [SerializeField] private GameObject leftButton;
         private ButtonState buttonState = ButtonState.Mid;
 
+        public static event Action<ButtonState> buttonClosedObserver;
+
         private void OnEnable()
         {
             ActivateAndCloseButtonAction.activateButtonPointObserver += ActivateButtons;
@@ -51,6 +53,7 @@ namespace Alican
         {
             rightButton.SetActive(false);
             leftButton.SetActive(false);
+            buttonClosedObserver?.Invoke(buttonState);
         }
         
     }
