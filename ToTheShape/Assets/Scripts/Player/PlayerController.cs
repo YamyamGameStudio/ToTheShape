@@ -35,11 +35,11 @@ namespace Alican
         {
             if (buttonState==ButtonState.Left)
             {
-                transform.DOMoveX(-1.5f, 2f);
+                transform.DOMoveX(-3f, 2f);
             }
             else if (buttonState==ButtonState.Right)
             {
-                transform.DOMoveX(1.5f, 2f);
+                transform.DOMoveX(3f, 2f);
             }
         }
 
