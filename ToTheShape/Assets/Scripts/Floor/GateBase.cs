@@ -33,6 +33,7 @@ public class GateBase : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             gateExitObserver?.Invoke();
+            GameManager.Instance.IncreasePlayerChangeCount();
         }
         
     }

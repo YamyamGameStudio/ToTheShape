@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class PlayerSpawner : MonoBehaviour
+public class PlayerSpawner : MonoSingleton<PlayerSpawner>
 {
     [SerializeField] private List<PlayerModel> playerList = new List<PlayerModel>();
 
@@ -25,7 +25,7 @@ public class PlayerSpawner : MonoBehaviour
         SpawnPlayer();
     }
 
-    private void SpawnPlayer()
+    public void SpawnPlayer()
     {
         var randomPlayerIndex=Random.Range(0,playerDictionary.Count);
         meshFilter.sharedMesh = playerList[randomPlayerIndex].playerMeshFilter.sharedMesh;
