@@ -5,10 +5,11 @@ using UnityEngine;
 
 namespace Alican
 {
-    public class LeftRightButtonController : MonoBehaviour
+    public class ButtonController : MonoBehaviour
     {
         [SerializeField] private GameObject rightButton;
         [SerializeField] private GameObject leftButton;
+        
         private ButtonState buttonState = ButtonState.Mid;
 
         public static event Action<ButtonState> buttonClosedObserver;
@@ -38,6 +39,11 @@ namespace Alican
             buttonState = ButtonState.Right;
         }
 
+        public void RestartButtons()
+        {
+            //scene manager ile oyun restart edilecek
+        }
+
         private void ResetButtonState()
         {
             buttonState = ButtonState.Mid;
@@ -55,6 +61,7 @@ namespace Alican
             leftButton.SetActive(false);
             buttonClosedObserver?.Invoke(buttonState);
         }
+        
         
     }
 

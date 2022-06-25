@@ -13,13 +13,13 @@ namespace Alican
         private void OnEnable()
         {
             GateBase.gateExitObserver += ResetSidePosition;
-            LeftRightButtonController.buttonClosedObserver += SideMovement;
+            ButtonController.buttonClosedObserver += SideMovement;
         }
 
         private void OnDestroy()
         {
             GateBase.gateExitObserver -= ResetSidePosition;
-            LeftRightButtonController.buttonClosedObserver -= SideMovement;
+            ButtonController.buttonClosedObserver -= SideMovement;
         }
 
         private void Update()
@@ -32,14 +32,14 @@ namespace Alican
             //transform.Translate(Vector3.forward*Time.deltaTime*hiz);
             transform.position += (Vector3.forward * Time.deltaTime * hiz);
         }
-    
+
         private void SideMovement(ButtonState buttonState)
         {
-            if (buttonState==ButtonState.Left)
+            if (buttonState == ButtonState.Left)
             {
                 transform.DOMoveX(-3f, 2f);
             }
-            else if (buttonState==ButtonState.Right)
+            else if (buttonState == ButtonState.Right)
             {
                 transform.DOMoveX(3f, 2f);
             }

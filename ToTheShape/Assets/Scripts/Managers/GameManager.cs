@@ -30,14 +30,21 @@ public class GameManager : MonoSingleton<GameManager>
     public void DecreaseHP()
     {
         hp--;
-        if (hp<0)
+        if (hp<=0)
         {
             //level finish
+            FinishGame();
         }
         else
         {
             UIManager.Instance.ChangeHPText(hp);
         }
+    }
+
+    private void FinishGame()
+    {
+        UIManager.Instance.TryButtonActive();
+        Time.timeScale = 0f;
     }
 
     

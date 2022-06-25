@@ -9,6 +9,7 @@ namespace Alican
     public class UIManager : MonoSingleton<UIManager>
     {
         [SerializeField] private TextMeshProUGUI scoreText, highScoreText, hpText;
+        [SerializeField] private GameObject tryButton;
 
         public void ChangeScoreText(int score)
         {
@@ -21,6 +22,11 @@ namespace Alican
         public void ChangeHPText(int hp)
         {
             hpText.text = ""+hp;
+        }
+
+        public void TryButtonActive()
+        {
+            tryButton.SetActive(true);
         }
     }
 }
