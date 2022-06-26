@@ -8,7 +8,7 @@ namespace Alican
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private float hiz = 5f;
+        [SerializeField] private float speed = 5f;
 
         private void OnEnable()
         {
@@ -24,13 +24,17 @@ namespace Alican
 
         private void Update()
         {
-            PlayerMovement();
+            if (!GameManager.Instance.isGameFail)
+            {
+                PlayerMovement();
+            }
+            
         }
 
         private void PlayerMovement()
         {
             //transform.Translate(Vector3.forward*Time.deltaTime*hiz);
-            transform.position += (Vector3.forward * Time.deltaTime * hiz);
+            transform.position += (Vector3.forward * Time.deltaTime * speed);
         }
 
         private void SideMovement(ButtonState buttonState)

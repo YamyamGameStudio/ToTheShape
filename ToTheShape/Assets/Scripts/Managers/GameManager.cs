@@ -15,6 +15,7 @@ public class GameManager : MonoSingleton<GameManager>
     private int playerChangeCounter;
 
     private float timeScaleValue = 1f;
+    public bool isGameFail;
 
     private void Start()
     {
@@ -61,8 +62,15 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void FinishGame()
     {
-        UIManager.Instance.TryButtonActive();
-        Time.timeScale = 0f;
+        UIManager.Instance.FailTextActive();
+        Invoke(nameof(RestartGame),2f);
+        isGameFail = true;
+        //Time.timeScale = 0f;
+    }
+
+    private void RestartGame()
+    {
+        LevelManager.Instance.LoadScene();
     }
 
     
