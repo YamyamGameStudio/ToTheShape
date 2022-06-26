@@ -1403,24 +1403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820a0dcb02a70214eba6943868bf171c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &340924280 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4166957101435121061, guid: 273e9dbf96726254786eab73769c6a3a, type: 3}
-  m_PrefabInstance: {fileID: 1991477614}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &340924284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340924280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd324eefb993b4ed085255e29b2e3b69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!1 &343180239
 GameObject:
   m_ObjectHideFlags: 0
@@ -3647,10 +3629,6 @@ PrefabInstance:
     - target: {fileID: 8041064759063782729, guid: 2f5781315de944cc39059c8c73e7b921, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8041064759063782729, guid: 2f5781315de944cc39059c8c73e7b921, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8041064759063782729, guid: 2f5781315de944cc39059c8c73e7b921, type: 3}
       propertyPath: m_LocalPosition.x
