@@ -56,6 +56,7 @@ public class GameManager : MonoSingleton<GameManager>
         }
         else
         {
+            UIManager.Instance.ShowWrongSideText();
             UIManager.Instance.ChangeHPText(hp);
         }
     }
@@ -78,7 +79,7 @@ public class GameManager : MonoSingleton<GameManager>
     public void IncreasePlayerChangeCount()
     {
         playerChangeCounter++;
-        if (playerChangeCounter==1)
+        if (playerChangeCounter==3)
         {
             ChangePlayer();
             playerChangeCounter = 0;

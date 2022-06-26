@@ -9,7 +9,7 @@ namespace Alican
     public class UIManager : MonoSingleton<UIManager>
     {
         [SerializeField] private TextMeshProUGUI scoreText, highScoreText, hpText;
-        [SerializeField] private GameObject failText;
+        [SerializeField] private GameObject failText,wrongSideText;
 
         public void ChangeScoreText(int score)
         {
@@ -27,6 +27,17 @@ namespace Alican
         public void FailTextActive()
         {
             failText.SetActive(true);
+        }
+
+        public void ShowWrongSideText()
+        {
+            wrongSideText.SetActive(true);
+            Invoke(nameof(CloseWrongSideText),1.5f);
+        }
+
+        private void CloseWrongSideText()
+        {
+            wrongSideText.SetActive(false);
         }
     }
 }
