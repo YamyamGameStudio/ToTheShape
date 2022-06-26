@@ -1106,9 +1106,54 @@ Transform:
   - {fileID: 937560707}
   - {fileID: 810308114}
   - {fileID: 612664993}
+  - {fileID: 295494030}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &295494029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 295494030}
+  - component: {fileID: 295494031}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &295494030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295494029}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 486.84644, y: 1089.1733, z: 266.7948}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 243327242}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &295494031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295494029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820a0dcb02a70214eba6943868bf171c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &343180239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,7 +1553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &857014825
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1575,7 +1620,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 937560706}
-        m_TargetAssemblyTypeName: Alican.LeftRightButtonController, Assembly-CSharp
+        m_TargetAssemblyTypeName: Alican.ButtonController, Assembly-CSharp
         m_MethodName: RestartButtons
         m_Mode: 1
         m_Arguments:
@@ -1702,7 +1747,7 @@ GameObject:
   - component: {fileID: 937560707}
   - component: {fileID: 937560706}
   m_Layer: 0
-  m_Name: LeftRightButtonController
+  m_Name: ButtonController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/AlicanScene_3.unity
+    guid: 265a71e1f552b0944a9ea0aa3e93d1a7
   m_configObjects: {}
