@@ -9,6 +9,7 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField] private int score;
     [SerializeField] private int hp=3;
     [SerializeField] private int highScore;
+    private const string HighScoreKey = "highScore";
 
 
     private int playerChangeCounter;
@@ -20,12 +21,28 @@ public class GameManager : MonoSingleton<GameManager>
         Time.timeScale = 1f;
         UIManager.Instance.ChangeScoreText(score);
         UIManager.Instance.ChangeHPText(hp);
+
+        //high score tanımlama
+        if (!PlayerPrefs.HasKey(HighScoreKey))
+        {
+            PlayerPrefs.SetInt(HighScoreKey,0);
+        }
+        highScore = PlayerPrefs.GetInt(HighScoreKey);
+        UIManager.Instance.ChangeHighScoreText(highScore);
     }
 
     public void IncreaseScore(int value)
     {
         score += value;
         UIManager.Instance.ChangeScoreText(score);
+        
+        //high score kontrol
+        if (score>=highScore)
+        {
+            highScore = score;
+            PlayerPrefs.SetInt(HighScoreKey,highScore);
+            UIManager.Instance.ChangeHighScoreText(highScore);
+        }
     }
 
     public void DecreaseHP()
