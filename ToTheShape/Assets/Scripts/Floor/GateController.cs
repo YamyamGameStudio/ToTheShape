@@ -59,10 +59,6 @@ public class GateController : MonoBehaviour
             firstChoosenMeshFilter = rightGateMeshFilter;
             secondChoosenMeshFilter = leftGateMeshFilter;
         }
-        
-        
-        
-        
         var randomFirstGateIndex=Random.Range(0,gateDictionary.Count);
         firstChoosenMeshFilter.sharedMesh = gateList[randomFirstGateIndex].gateMeshFilter.sharedMesh;
         firstGateType = gateList[randomFirstGateIndex].gateType;
